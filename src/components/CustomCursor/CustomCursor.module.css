@@ -1,0 +1,32 @@
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(165, 126, 82, 0.6); /* Soft brown glow */
+  transform-origin: center;
+  mix-blend-mode: difference; /* Futuristic blend effect */
+}
+
+.cursorRing {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  pointer-events: none;
+  z-index: 9998;
+  transform-origin: center;
+  mix-blend-mode: screen; /* Alternative blend effect for the ring */
+}
+
+/* Hide cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursor, .cursorRing {
+    display: none;
+  }
+}
